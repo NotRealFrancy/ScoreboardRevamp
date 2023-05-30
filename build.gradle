@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+}
+
+group 'org.github.notrealfrancy.scoreboardrevamp'
+version '1.0'
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
+    maven {
+        url 'https://oss.sonatype.org/content/repositories/snapshots/'
+    }
+    maven {
+        url "https://repo.codemc.io/repository/maven-public/"
+    }
+    maven {
+        url 'https://repo.md-5.net/content/repositories/snapshots/'
+    }
+    maven { url "https://repo.dmulloy2.net/repository/public/" }
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.26'
+    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.26'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.26'
+
+    compileOnly 'org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT'
+    compileOnly 'net.md-5:bungeecord-chat:1.8-SNAPSHOT'
+
+    implementation group: 'io.netty', name: 'netty-all', version: '4.1.24.Final'
+
+    compileOnly "org.bukkit:bukkit:1.8.8-R0.1-SNAPSHOT"
+    // compileOnly group: "com.comphenix.protocol", name: "ProtocolLib", version: "4.7.0";
+}
+
+test {
+    useJUnitPlatform()
+}
